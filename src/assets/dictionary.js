@@ -4,7 +4,7 @@ export const TURNS = Object.freeze({
 })
 
 export const AD_CARDS = [7, 0, 5, 2, 4, 6, 3, 8, 1]
-export const I_CARDS = [1, 8, 3, 6, 4, 2, 5, 0]
+export const I_CARDS = [1, 8, 3, 6, 4, 2, 5, 0, 7]
 
 export const WIN_COMBINATIONS = [
   [0, 1, 2],
