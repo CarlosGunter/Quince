@@ -12,6 +12,8 @@ function App () {
       ? <Game
       currentTurn={currentTurn}
       setTurn={setTurn}
+      firstTurn={firstTurn}
+      setStart={setStart}
       ></Game>
       : <Create turn={currentTurn} setTurn={setTurn} firstTurn={firstTurn} setStart={setStart} ></Create>
   )

@@ -1,11 +1,24 @@
 import { useState } from 'react'
 import { Board } from './Board'
 
-export function Game ({ currentTurn, setTurn }) {
+export function Game ({ currentTurn, setTurn, firstTurn, setStart }) {
   const [cards, setCards] = useState(Array(9).fill(null))
   const [userCards, setUserCrd] = useState([])
   const [pcCards, setPcCrd] = useState([])
   const [win, setWinner] = useState(false)
+
+  const reload = () => {
+    setTurn(false)
+    setStart(false)
+  }
+
+  const reset = () => {
+    setCards(Array(9).fill(null))
+    setUserCrd([])
+    setPcCrd([])
+    setWinner(false)
+    setTurn(firstTurn.current)
+  }
 
   return (
     <>
@@ -22,6 +35,11 @@ export function Game ({ currentTurn, setTurn }) {
       ></Board>
       <Widgets cards={userCards}>Usuario</Widgets>
       <Widgets cards={pcCards}>PC</Widgets>
+
+      <div className='buttons'>
+        <button className='button' onClick={() => reload()}>Ir al inicio</button>
+        <button className='button' onClick={() => reset()}>Reiniciar</button>
+      </div>
     </>
   )
 }

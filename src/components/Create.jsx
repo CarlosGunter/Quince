@@ -3,7 +3,7 @@ import { User, Machine } from '../assets/svg.jsx'
 
 export function Create ({ turn, setTurn, firstTurn, setStart }) {
   const start = () => {
-    if (turn !== null) setStart(true)
+    if (turn) setStart(true)
   }
   return (
     <section>
@@ -24,7 +24,7 @@ export function Create ({ turn, setTurn, firstTurn, setStart }) {
           <Machine></Machine>
         </div>
       </div>
-      <button className='start' onClick={() => { start() }}>Iniciar</button>
+      <button className='button' onClick={() => { start() }}>Iniciar</button>
     </section>
   )
 }

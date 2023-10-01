@@ -16,7 +16,12 @@
   border-radius: 20%;
 }
 
-.start {
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.button {
   margin-top: 20px;
 }
 
