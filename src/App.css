@@ -1,9 +1,46 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  --color-prim: #1e90ff;
+
+  min-width: 100%;
+  padding-block-end: 30px;
   text-align: center;
 }
+
+.main {
+  display: grid;
+  place-items: center;
+}
+
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+
+  & .usr_pc {
+    flex-direction: column;
+  }
+}
+@media (width < 430px) {
+  .boxes {
+    gap: 10px;
+  }
+}
+
+.title {
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background: linear-gradient(91deg, #42d392, #647eff);
+
+  & .icon {
+    width: 45px;
+    height: 45px;
+    color: #42d392;
+  }
+}
+
 .hv {
   &:hover {
     transition: 250ms ease;
@@ -26,22 +63,25 @@
 }
 
 .cards {
-  min-width: 300px;
-  padding: 50px;
+  min-width: 250px;
+  min-height: 50px;
+  padding: 15px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(48px, 1fr));
   gap: 10px;
   border: solid 3px #fff;
-}
-.card {
-  display: grid;
-  place-items: center;
-  width: 50px;
-  height: 75px;
-  border: solid 2px #fff;
   border-radius: 10px;
-  font-size: 20px;
-  cursor: default;
+  
+  .card {
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    border: solid 2px #fff;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: default;
+  }
 }
 
 .turn{
@@ -58,4 +98,67 @@
   display: grid;
   place-items:center;
   transition: 100ms;
+}
+
+.admin {
+  display:flex ;  
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-size: 25px;
+  margin-block: 12px;
+  .icon {
+    width: 90px;
+    height: 90px;
+  }
+}
+.machine_turn {
+  color:#696969;
+}
+
+.stadistics {
+  display:flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 5px;
+
+  .block {
+    font-size: 18px;
+    max-width: 62px;
+    height: fit-content;
+    padding: 15px;
+    border: solid 1.5px var(--color-prim);
+    border-radius: 15px;
+  }
+  
+}
+
+.scale-in-center {
+  -webkit-animation: scale-in-center 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: scale-in-center 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
 }
